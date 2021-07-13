@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    /* primary text color */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* background gradient color */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* neutral text color */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* dividers color */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+    /* FONT */
+    --font: 'Kumbh Sans', sans-serif;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body  {
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    font-size: 12px;
+}
+
+.box-image {
+    position: absolute;
+    top: 12.35rem;
+    left: -5.8rem;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    z-index: 1;
+
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55rem;
+    max-width: none;
+    height: 32rem;
+    background: white;
+    font-family: var(--font);
+    border-radius: 20px;
+    box-shadow: 0 5rem 5rem -10px rgb(0 0 0 / 25%);
+    display: flex;
+}
+
+.women-image {
+    margin-right: 84px;
+    
+    background-image:  url(./images/illustration-woman-online-desktop.svg), url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position:  -84px 69px, -36rem -18.40rem;
+    width: 50%;
+}
+
+.faq_wrapper {
+    margin-top: 6em;
+    width: 50%;
+    margin-right: 1em;
+}
+
+.heading {
+    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+    font-size: 2.6em;
+}
+
+.faq {
+    margin-bottom: 1rem;
+}
+
+hr {
+    margin-right: 45px;
+    margin-bottom: 1rem;
+    border-top: 1px solid var(--color-light-greyish-blue);
+}
+.ques {
+    font-size: 0.87rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--very-dark-grayish-blue);
+    margin-right: 57px;
+}
+
+.ques:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+}
+.ques::after {
+    content: url(./images/icon-arrow-down.svg);
+    transition: all 0.3s;
+}
+
+
+.ans {
+    /* display: none; */
+    margin: 10px 75px 10px 0px;
+    line-height: 1.44;
+    color: var(--dark-grayish-blue);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.open {
+    display: block;
+}
+
+.active.ques{
+    font-weight: bold;
+}
+
+.active::after {
+    transform: rotate(180deg);
+}
+
+
+
+.faq_wrapper {
+    overflow-y: scroll;
+}
+
+.faq_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* MEDIA QUERIES FOR MOBILE  */
+@media only screen and (max-width: 1000px) {
+    
+    body {
+        padding-top: 14rem;
+    }
+    .card {
+        width: 20rem;
+    }
+    .heading {
+        text-align: center;
+    }
+    .ques {
+        margin-right: 0;
+    }
+    .faq {
+        margin-right: 18px;
+        margin-left: 18px;
+    }
+    .women-image {
+        display: none;
+    }
+    
+    .faq_wrapper {
+        width: 100%;
+        margin-top: 111px;
+        margin-bottom: 0;
+    }
+    
+
+    hr {
+        margin-left: 10px;
+        margin-right: 20px;
+
+    }
+    .box-image {
+        display: none;
+    }
+   
+    .mobile-women {
+        position: absolute;
+        top: -22%;
+        left: 5%;
+        z-index: 3;
+    }
+    .shadow {
+        position: absolute;
+        top: -2%;
+        left: 14%;
+        z-index: 3;
+    }
+}
